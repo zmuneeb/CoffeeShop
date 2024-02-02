@@ -41,7 +41,7 @@
         <tbody>
         <tr th:each="tempPart : ${parts}">
             <td th:text="${tempPart.name}">Water Reservoir</td>
-            <td th:text="${tempPart.price}">$19.99</td>
+            <td th:text="${tempPart.price}">$14.99</td>
             <td th:text="${tempPart.inv}">5</td>
             <td><a th:href="@{/showPartFormForUpdate(partID=${tempPart.id})}" class="btn btn-primary btn-sm mb-3">Update</a>
                 <a th:href="@{/deletepart(partID=${tempPart.id})}" class="btn btn-primary btn-sm mb-3"
