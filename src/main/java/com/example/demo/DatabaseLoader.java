@@ -35,7 +35,7 @@ public class DatabaseLoader implements CommandLineRunner {
             wr.setName("Water Reservoir");
             wr.setInv(20);
             wr.setPrice(15.00);
-            wr.setId(11);
+            wr.setId(1);
             if (!parts.add(wr)) {
                 wr.setName(wr.getName() + " Multi-Pack");
             }
@@ -45,7 +45,7 @@ public class DatabaseLoader implements CommandLineRunner {
             cf.setName("Reusable Coffee Filter");
             cf.setInv(20);
             cf.setPrice(5.00);
-            cf.setId(12);
+            cf.setId(2);
             if (!parts.add(cf)) {
                 cf.setName(cf.getName() + " Multi-Pack");
             }
@@ -55,7 +55,7 @@ public class DatabaseLoader implements CommandLineRunner {
             hr.setName("Heating Rod");
             hr.setInv(20);
             hr.setPrice(25.00);
-            hr.setId(13);
+            hr.setId(3);
             if (!parts.add(hr)) {
                 hr.setName(hr.getName() + " Multi-Pack");
             }
@@ -65,7 +65,7 @@ public class DatabaseLoader implements CommandLineRunner {
             cp.setName("Coffee Pot");
             cp.setInv(20);
             cp.setPrice(10.00);
-            cp.setId(14);
+            cp.setId(4);
             if (!parts.add(cp)) {
                 cp.setName(cp.getName() + " Multi-Pack");
             }
@@ -75,7 +75,7 @@ public class DatabaseLoader implements CommandLineRunner {
             mw.setName("Machine Wiring");
             mw.setInv(20);
             mw.setPrice(5.00);
-            mw.setId(15);
+            mw.setId(5);
             if (!parts.add(mw)) {
                 mw.setName(mw.getName() + " Multi-Pack");
             }
@@ -93,7 +93,7 @@ public class DatabaseLoader implements CommandLineRunner {
             Product greenhouseMax = new Product("Greenhouse Max", 100.00, 50);
             productRepository.save(greenhouseMax);
 
-            Product greenhousePrime = new Product("Greenhouse Plus", 125.00, 50);
+            Product greenhousePrime = new Product("Greenhouse Prime", 125.00, 50);
             productRepository.save(greenhousePrime);
 
             Product greenhouseSignature = new Product("Greenhouse Signature", 150.00, 50);

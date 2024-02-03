@@ -47,6 +47,7 @@
             <td><a th:href="@{/showPartFormForUpdate(partID=${tempPart.id})}" class="btn btn-primary btn-sm mb-3">Update</a>
                 <a th:href="@{/deletepart(partID=${tempPart.id})}" class="btn btn-primary btn-sm mb-3"
                    onclick="if(!(confirm('Are you sure you want to delete this part?')))return false">Delete</a>
+                <button onclick="buyPart(${tempPart.id})" class="btn btn-primary btn-sm mb-3">Buy Now</button>
             </td>
         </tr>
         </tbody>
@@ -83,6 +84,7 @@
             <td><a th:href="@{/showProductFormForUpdate(productID=${tempProduct.id})}" class="btn btn-primary btn-sm mb-3">Update</a>
                 <a th:href="@{/deleteproduct(productID=${tempProduct.id})}" class="btn btn-primary btn-sm mb-3"
                    onclick="if(!(confirm('Are you sure you want to delete this product?')))return false">Delete</a>
+                <button onclick="buyProduct('${tempProduct.name}')" class="btn btn-primary btn-sm mb-3">Buy Now</button>
             </td>
         </tr>
         </tbody>
@@ -104,5 +106,23 @@
     <li>Greenhouse Prime</li>
     <li>Greenhouse Signature</li>
 </ul>
+<script type="text/javascript">
+    function clearSearch() {
+        window.location = "[[@{/}]]";
+    }
+
+    function buyProduct(productName) {
+        fetch(`/buy/${productName}`, { method: 'POST' })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Purchase successful!');
+                    location.reload(); // Reload the page to update the inventory
+                } else {
+                    alert('Purchase failed: ' + data.message);
+                }
+            });
+    }
+</script>
 </body>
 </html>

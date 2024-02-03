@@ -61,9 +61,9 @@ public class ProductServiceImpl implements ProductService{
         productRepository.deleteById(theIdl);
     }
     public List<Product> listAll(String keyword){
-        if(keyword !=null){
-            return productRepository.search(keyword);
+        if(keyword != null){
+            return productRepository.findByNameContaining(keyword);
         }
         return (List<Product>) productRepository.findAll();
     }
-}
+    }
