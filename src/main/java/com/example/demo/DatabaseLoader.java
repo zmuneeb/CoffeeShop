@@ -33,11 +33,11 @@ public class DatabaseLoader implements CommandLineRunner {
             OutsourcedPart wr = new OutsourcedPart();
             wr.setCompanyName("Water Tanks Inc.");
             wr.setName("Water Reservoir");
-            wr.setInv(20);
-            wr.setMinInv(10); // new field
-            wr.setMaxInv(30); // new field
             wr.setPrice(15.00);
             wr.setId(1);
+            wr.setMinInv(10); // set minInv before inv
+            wr.setMaxInv(40); // set maxInv before inv
+            wr.setInv(20); // set inv after minInv and maxInv
             if (!parts.add(wr)) {
                 wr.setName(wr.getName() + " Multi-Pack");
             }
@@ -45,11 +45,11 @@ public class DatabaseLoader implements CommandLineRunner {
             OutsourcedPart cf = new OutsourcedPart();
             cf.setCompanyName("Coffee Filters Inc.");
             cf.setName("Reusable Coffee Filter");
-            cf.setInv(20);
-            cf.setMinInv(10); // new field
-            cf.setMaxInv(30); // new field
             cf.setPrice(5.00);
             cf.setId(2);
+            cf.setMinInv(10); // set minInv before inv
+            cf.setMaxInv(40); // set maxInv before inv
+            cf.setInv(20); // set inv after minInv and maxInv
             if (!parts.add(cf)) {
                 cf.setName(cf.getName() + " Multi-Pack");
             }
@@ -57,11 +57,11 @@ public class DatabaseLoader implements CommandLineRunner {
             OutsourcedPart hr = new OutsourcedPart();
             hr.setCompanyName("HVAC Systems Inc.");
             hr.setName("Heating Rod");
-            hr.setInv(20);
-            hr.setMinInv(10); // new field
-            hr.setMaxInv(30); // new field
             hr.setPrice(25.00);
             hr.setId(3);
+            hr.setMinInv(10); // set minInv before inv
+            hr.setMaxInv(40); // set maxInv before inv
+            hr.setInv(20); // set inv after minInv and maxInv
             if (!parts.add(hr)) {
                 hr.setName(hr.getName() + " Multi-Pack");
             }
@@ -69,11 +69,11 @@ public class DatabaseLoader implements CommandLineRunner {
             OutsourcedPart cp = new OutsourcedPart();
             cp.setCompanyName("Coffee Pots Inc.");
             cp.setName("Coffee Pot");
-            cp.setInv(20);
-            cp.setMinInv(10); // new field
-            cp.setMaxInv(30); // new field
             cp.setPrice(10.00);
             cp.setId(4);
+            cp.setMinInv(10); // set minInv before inv
+            cp.setMaxInv(40); // set maxInv before inv
+            cp.setInv(20); // set inv after minInv and maxInv
             if (!parts.add(cp)) {
                 cp.setName(cp.getName() + " Multi-Pack");
             }
@@ -81,11 +81,11 @@ public class DatabaseLoader implements CommandLineRunner {
             OutsourcedPart mw = new OutsourcedPart();
             mw.setCompanyName("Electric Solutions Inc.");
             mw.setName("Machine Wiring");
-            mw.setInv(20);
-            mw.setMinInv(10); // new field
-            mw.setMaxInv(30); // new field
             mw.setPrice(5.00);
             mw.setId(5);
+            mw.setMinInv(10); // set minInv before inv
+            mw.setMaxInv(40); // set maxInv before inv
+            mw.setInv(20); // set inv after minInv and maxInv
             if (!parts.add(mw)) {
                 mw.setName(mw.getName() + " Multi-Pack");
             }

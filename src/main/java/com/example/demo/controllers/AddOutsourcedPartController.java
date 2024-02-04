@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.Valid;
-
 /**
  *
  *
@@ -38,19 +37,21 @@ public class AddOutsourcedPartController {
     }
 
     @PostMapping("/showFormAddOutPart")
-    public String submitForm(@Valid @ModelAttribute("outsourcedpart") OutsourcedPart part, BindingResult bindingResult, Model theModel){
-        theModel.addAttribute("outsourcedpart",part);
-        if(bindingResult.hasErrors()){
-            return "OutsourcedPartForm";
+    public String submitForm(@Valid @ModelAttribute("outsourcedpart") OutsourcedPart part, BindingResult theBindingResult, Model theModel) {
+        theModel.addAttribute("outsourcedpart", part);
+        try {
+            part.validateInventory();
+        } catch (IllegalArgumentException e) {
+            theBindingResult.rejectValue("inv", "error.part", e.getMessage());
         }
-        else{
-        OutsourcedPartService repo=context.getBean(OutsourcedPartServiceImpl.class);
-        OutsourcedPart op=repo.findById((int)part.getId());
-        if(op!=null)part.setProducts(op.getProducts());
+        if (theBindingResult.hasErrors()) {
+            return "OutsourcedPartForm";
+        } else {
+            OutsourcedPartService repo = context.getBean(OutsourcedPartServiceImpl.class);
+            OutsourcedPart op = repo.findById((int) part.getId());
+            if (op != null) part.setProducts(op.getProducts());
             repo.save(part);
-        return "confirmationaddpart";}
+            return "confirmationaddpart";
+        }
     }
-
-
-
 }
