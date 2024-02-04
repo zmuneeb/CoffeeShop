@@ -20,5 +20,6 @@
 ## PART H
         - Added more statements to catch errors if inventory is too low or if user updates a part or product above the max inventory
 ## PART I
-
+        - Added two tests to partTest.java: setMinInv() and setMaxInv(). Using partIn and partOut to test the code for errors.
 ## PART J
+        - Removed one validator DeletePartValidator.java. This had 0 usages according to IntelliJ, so it was removed.

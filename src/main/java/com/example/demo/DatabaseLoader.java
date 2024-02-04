@@ -35,9 +35,9 @@ public class DatabaseLoader implements CommandLineRunner {
             wr.setName("Water Reservoir");
             wr.setPrice(15.00);
             wr.setId(1);
-            wr.setMinInv(30); // set minInv before inv
-            wr.setMaxInv(80); // set maxInv before inv
-            wr.setInv(50); // set inv after minInv and maxInv
+            wr.setMinInv(30);
+            wr.setMaxInv(80);
+            wr.setInv(50);
             if (!parts.add(wr)) {
                 wr.setName(wr.getName() + " Multi-Pack");
             }
@@ -47,9 +47,9 @@ public class DatabaseLoader implements CommandLineRunner {
             cf.setName("Reusable Coffee Filter");
             cf.setPrice(5.00);
             cf.setId(2);
-            cf.setMinInv(30); // set minInv before inv
-            cf.setMaxInv(80); // set maxInv before inv
-            cf.setInv(50); // set inv after minInv and maxInv
+            cf.setMinInv(30);
+            cf.setMaxInv(80);
+            cf.setInv(50);
             if (!parts.add(cf)) {
                 cf.setName(cf.getName() + " Multi-Pack");
             }
@@ -59,9 +59,9 @@ public class DatabaseLoader implements CommandLineRunner {
             hr.setName("Heating Rod");
             hr.setPrice(25.00);
             hr.setId(3);
-            hr.setMinInv(30); // set minInv before inv
-            hr.setMaxInv(80); // set maxInv before inv
-            hr.setInv(50); // set inv after minInv and maxInv
+            hr.setMinInv(30);
+            hr.setMaxInv(80);
+            hr.setInv(50);
             if (!parts.add(hr)) {
                 hr.setName(hr.getName() + " Multi-Pack");
             }
@@ -71,9 +71,9 @@ public class DatabaseLoader implements CommandLineRunner {
             cp.setName("Coffee Pot");
             cp.setPrice(10.00);
             cp.setId(4);
-            cp.setMinInv(30); // set minInv before inv
-            cp.setMaxInv(80); // set maxInv before inv
-            cp.setInv(50); // set inv after minInv and maxInv
+            cp.setMinInv(30);
+            cp.setMaxInv(80);
+            cp.setInv(50);
             if (!parts.add(cp)) {
                 cp.setName(cp.getName() + " Multi-Pack");
             }
@@ -83,9 +83,9 @@ public class DatabaseLoader implements CommandLineRunner {
             mw.setName("Machine Wiring");
             mw.setPrice(5.00);
             mw.setId(5);
-            mw.setMinInv(30); // set minInv before inv
-            mw.setMaxInv(80); // set maxInv before inv
-            mw.setInv(50); // set inv after minInv and maxInv
+            mw.setMinInv(30);
+            mw.setMaxInv(80);
+            mw.setInv(50);
             if (!parts.add(mw)) {
                 mw.setName(mw.getName() + " Multi-Pack");
             }
