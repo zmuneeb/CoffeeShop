@@ -18,7 +18,7 @@
         - In Part.java, added setters and getters for minInv and maxInv so that the user can set the min and maxInv of the part
         - Added an if statement so that if user tries to set the inventory to below the minimum or above the maximum, an error will show
 ## PART H
-
+        - Added more statements to catch errors if inventory is too low or if user updates a part or product above the max inventory
 ## PART I
 
 ## PART J

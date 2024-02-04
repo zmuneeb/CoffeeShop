@@ -117,9 +117,16 @@ public abstract class Part implements Serializable {
         this.inv = inv;
     }
     public void validateInventory() {
-        LOGGER.info("Validating inventory. Current maxInv is: " + maxInv);
-        validateMin();
-        validateMax();
+        LOGGER.info("Validating inventory. Current maxInv is: " + maxInv + ", minInv is: " + minInv);
+        if (inv < minInv) {
+            throw new IllegalArgumentException("Error: Inventory for part '" + name + "' is less than the minimum allowed.");
+        }
+        if (inv > maxInv) {
+            throw new IllegalArgumentException("Error: Inventory for part '" + name + "' is greater than the maximum allowed.");
+        }
+        if (inv < minInv || inv > maxInv) {
+            throw new IllegalArgumentException("Error: Inventory for part '" + name + "' must be between the minimum and maximum allowed.");
+        }
     }
     public int getMinInv() {
         return minInv;

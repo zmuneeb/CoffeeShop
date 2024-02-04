@@ -98,4 +98,11 @@ public class Product implements Serializable {
     public int hashCode() {
         return (int) (id ^ (id >>> 32));
     }
+    public void validatePartsInventory() {
+        for (Part part : parts) {
+            if (part.getInv() < part.getMinInv()) {
+                throw new IllegalArgumentException("Error: Updating this product would cause the inventory of part " + part.getName() + " to fall below the minimum.");
+            }
+        }
+    }
 }
