@@ -9,12 +9,6 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- *
- *
- *
- *
- */
 @Entity
 @Table(name="Products")
 @ValidProductPrice

@@ -41,13 +41,12 @@
         </thead>
         <tbody>
         <tr th:each="tempPart : ${parts}">
-            <td th:text="${tempPart.name}">1</td>
-            <td th:text="${tempPart.price}">1</td>
-            <td th:text="${tempPart.inv}">1</td>
+            <td th:text="${tempPart.name}"></td>
+            <td th:text="${tempPart.price}"></td>
+            <td th:text="${tempPart.inv}"></td>
             <td><a th:href="@{/showPartFormForUpdate(partID=${tempPart.id})}" class="btn btn-primary btn-sm mb-3">Update</a>
                 <a th:href="@{/deletepart(partID=${tempPart.id})}" class="btn btn-primary btn-sm mb-3"
                    onclick="if(!(confirm('Are you sure you want to delete this part?')))return false">Delete</a>
-                <button onclick="buyPart(${tempPart.id})" class="btn btn-primary btn-sm mb-3">Buy Now</button>
             </td>
         </tr>
         </tbody>
@@ -78,14 +77,16 @@
         </thead>
         <tbody>
         <tr th:each="tempProduct : ${products}">
-            <td th:text="${tempProduct.name}">1</td>
-            <td th:text="${tempProduct.price}">1</td>
-            <td th:text="${tempProduct.inv}">1</td>
+            <td th:text="${tempProduct.name}"></td>
+            <td th:text="${tempProduct.price}"></td>
+            <td th:text="${tempProduct.inv}"></td>
             <td><a th:href="@{/showProductFormForUpdate(productID=${tempProduct.id})}" class="btn btn-primary btn-sm mb-3">Update</a>
                 <a th:href="@{/deleteproduct(productID=${tempProduct.id})}" class="btn btn-primary btn-sm mb-3"
                    onclick="if(!(confirm('Are you sure you want to delete this product?')))return false">Delete</a>
-                <button onclick="buyProduct('${tempProduct.name}')" class="btn btn-primary btn-sm mb-3">Buy Now</button>
-            </td>
+                <form method="POST" action="/buyProduct">
+                    <input type="hidden" name="productId" th:value="${tempProduct.id}" />
+                    <button type="submit" class="btn btn-primary btn-sm mb-3">Buy Now</button>
+                </form>            </td>
         </tr>
         </tbody>
     </table>

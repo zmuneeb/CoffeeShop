@@ -34,6 +34,8 @@ public class DatabaseLoader implements CommandLineRunner {
             wr.setCompanyName("Water Tanks Inc.");
             wr.setName("Water Reservoir");
             wr.setInv(20);
+            wr.setMinInv(10); // new field
+            wr.setMaxInv(30); // new field
             wr.setPrice(15.00);
             wr.setId(1);
             if (!parts.add(wr)) {
@@ -44,6 +46,8 @@ public class DatabaseLoader implements CommandLineRunner {
             cf.setCompanyName("Coffee Filters Inc.");
             cf.setName("Reusable Coffee Filter");
             cf.setInv(20);
+            cf.setMinInv(10); // new field
+            cf.setMaxInv(30); // new field
             cf.setPrice(5.00);
             cf.setId(2);
             if (!parts.add(cf)) {
@@ -54,6 +58,8 @@ public class DatabaseLoader implements CommandLineRunner {
             hr.setCompanyName("HVAC Systems Inc.");
             hr.setName("Heating Rod");
             hr.setInv(20);
+            hr.setMinInv(10); // new field
+            hr.setMaxInv(30); // new field
             hr.setPrice(25.00);
             hr.setId(3);
             if (!parts.add(hr)) {
@@ -64,6 +70,8 @@ public class DatabaseLoader implements CommandLineRunner {
             cp.setCompanyName("Coffee Pots Inc.");
             cp.setName("Coffee Pot");
             cp.setInv(20);
+            cp.setMinInv(10); // new field
+            cp.setMaxInv(30); // new field
             cp.setPrice(10.00);
             cp.setId(4);
             if (!parts.add(cp)) {
@@ -74,6 +82,8 @@ public class DatabaseLoader implements CommandLineRunner {
             mw.setCompanyName("Electric Solutions Inc.");
             mw.setName("Machine Wiring");
             mw.setInv(20);
+            mw.setMinInv(10); // new field
+            mw.setMaxInv(30); // new field
             mw.setPrice(5.00);
             mw.setId(5);
             if (!parts.add(mw)) {

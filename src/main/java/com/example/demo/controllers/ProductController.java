@@ -25,33 +25,4 @@ public class ProductController {
     public ProductController(ProductRepository productRepository) {
         this.productRepository = productRepository;
     }
-
-    @PostMapping("/buy/{productName}")
-    public ResponseEntity<Map<String, Object>> buyProduct(@PathVariable String productName) {
-        logger.info("Product name provided in request: " + productName);
-
-        List<Product> allProducts = productRepository.findAll();
-        logger.info("All product names in repository: " + allProducts.stream()
-                .map(Product::getName)
-                .collect(Collectors.toList()));
-
-        Optional<Product> productOpt = productRepository.findByName(productName);
-        if (productOpt.isPresent()) {
-            logger.info("Product found: " + productOpt.get().getName());
-        } else {
-            logger.info("Product not found");
-        }
-        if (productOpt.isPresent()) {
-            Product product = productOpt.get();
-            if (product.getInv() > 0) {
-                product.setInv(product.getInv() - 1);
-                productRepository.save(product);
-                return ResponseEntity.ok(Collections.singletonMap("success", true));
-            } else {
-                return ResponseEntity.ok(Collections.singletonMap("message", "Product is out of stock"));
-            }
-        } else {
-            return ResponseEntity.ok(Collections.singletonMap("message", "Product not found"));
-        }
-    }
 }
