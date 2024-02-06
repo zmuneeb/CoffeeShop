@@ -1,14 +1,11 @@
 package com.example.demo.domain;
-
 import com.example.demo.validators.ValidDeletePart;
-
 import javax.persistence.*;
 import javax.validation.constraints.Min;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.logging.Logger;
-
 /**
  *
  *
@@ -30,13 +27,10 @@ public abstract class Part implements Serializable {
     double price;
     @Min(value = 0, message = "Inventory value must be positive")
     int inv;
-
     @Min(value = 0, message = "Inventory cannot be below zero")
     private int minInv;
-
     @Min(value = 0, message = "Inventory cannot be below zero")
     private int maxInv;
-
     @ManyToMany
     @JoinTable(name="product_part", joinColumns = @JoinColumn(name="part_id"),
             inverseJoinColumns=@JoinColumn(name="product_id"))
@@ -70,23 +64,18 @@ public abstract class Part implements Serializable {
     public long getId() {
         return id;
     }
-
     public void setId(long id) {
         this.id = id;
     }
-
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
-
     public double getPrice() {
         return price;
     }
-
     public void setPrice(double price) {
         this.price = price;
     }
@@ -96,20 +85,8 @@ public abstract class Part implements Serializable {
     public void setMaxInv(int maxInv) {
         this.maxInv = maxInv;
     }
-
     public int getInv() {
         return inv;
-    }
-    private void validateMin() {
-        if (inv < minInv) {
-            throw new IllegalArgumentException("Error: Inventory for part is less than the minimum allowed.");
-        }
-    }
-
-    private void validateMax() {
-        if (inv > maxInv) {
-            throw new IllegalArgumentException("Error: Inventory for part is greater than the maximum allowed.");
-        }
     }
     public void setInv(int inv) {
         LOGGER.info("Setting inv to: " + inv);
@@ -131,22 +108,15 @@ public abstract class Part implements Serializable {
     public int getMinInv() {
         return minInv;
     }
-
     public int getMaxInv() {
         return maxInv;
     }
-    public boolean isInvValid() {
-        return inv >= minInv && inv <= maxInv;
-    }
-
     public Set<Product> getProducts() {
         return products;
     }
-
     public void setProducts(Set<Product> products) {
         this.products = products;
     }
-
     public String toString(){
         return this.name;
     }
@@ -159,7 +129,6 @@ public abstract class Part implements Serializable {
 
         return id == part.id;
     }
-
     @Override
     public int hashCode() {
         return (int) (id ^ (id >>> 32));
