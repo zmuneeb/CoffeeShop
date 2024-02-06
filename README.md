@@ -5,7 +5,6 @@
         - Changed name of shop's HTML on line 14 and 19.
         - Added parts related to the company's coffee machine from line 96-100.
         - Added products that the shop offers from line 104-108.
-        - 
 ## PART D
         - Added an About Us page for the company.
         - About Us page is named about.html, located in src/main/resources/templates.
